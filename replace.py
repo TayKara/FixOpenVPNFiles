@@ -10,7 +10,7 @@ for f in files:
     data = fin.read()
     #Add \n in the end of the string if there is not
     if "\n" not in data[-1] :
-        data.join("\n")
+        data = data + "\n"
     #find option auth-user-pass and replace its value if there is one
     toReplace = re.search('auth-user-pass(.*)\n', data).group(1)
     print("toReplace : "+toReplace)
