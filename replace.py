@@ -15,9 +15,9 @@ for f in files:
     toReplace = re.search('auth-user-pass(.*)\n', data).group(1)
     print("toReplace : "+toReplace)
     data = data.replace("auth-user-pass"+toReplace, "auth-user-pass "+userPath)
-    #remove comp-lzo preceded or followed by \n to remove the line
-    data = data.replace("\ncomp-lzo", "")
-    data = data.replace("comp-lzo\n", "")
+    #remove comp-lzo preceded or followed by \n to remove the line /!\ It could provoke some bugs...
+    #data = data.replace("\ncomp-lzo", "")
+    #data = data.replace("comp-lzo\n", "")
     #close the input file
     fin.close()
     #open the input file in write mode
